@@ -30,7 +30,7 @@ bash
 ls
 
 
-- *9.* Puis faites la commande suivante pour installer les dépendances du projet
+- *9.* Puis faites la commande suivante pour accéder au dossier
 bash
 cd Projet_MBDIA
 
