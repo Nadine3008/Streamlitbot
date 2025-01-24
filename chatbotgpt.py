@@ -37,7 +37,7 @@ if prompt := st.chat_input("What is up?"):
                 for m in st.session_state.messages
             ],
             stream=True,
-            max_tokens = 200,
+            max_tokens = 300,
         )
         response = st.write_stream(stream)
     st.session_state.messages.append({"role": "assistant", "content": response})
@@ -52,3 +52,14 @@ model_type = st.selectbox(
 
 # Affichage du modèle sélectionné
 st.write(f"Modèle sélectionné : {model_type}")
+
+# Ajouter un slider pour le nombre maximum de jetons
+max_tokens = st.slider(
+    "Choisissez le nombre maximum de jetons :",
+    min_value=0,
+    max_value=500,
+    value=100  # Valeur par défaut
+)
+
+# Affichage de la valeur sélectionnée h
+st.write(f"Nombre maximum de jetons : {max_tokens}")
